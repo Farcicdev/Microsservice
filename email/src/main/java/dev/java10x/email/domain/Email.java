@@ -1,4 +1,4 @@
-package domain;
+package dev.java10x.email.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -15,18 +15,20 @@ import java.util.UUID;
 @Builder
 public class Email {
 
+    private final long srialVersionUID = 1L;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID emailId;
 
-    private String userId;
+    private UUID userId;
 
     private String emailFrom;
 
     private String emailTo;
 
     private String emailSubject;
-    @Column(columnDefinition = "BODY")
+    @Column(columnDefinition = "TEXT")
     private String Body;
 
     private LocalDateTime sendEmail;

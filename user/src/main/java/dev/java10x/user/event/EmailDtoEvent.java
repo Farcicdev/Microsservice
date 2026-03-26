@@ -1,13 +1,14 @@
-package dev.java10x.email.dto;
+package dev.java10x.user.event;
 
 import lombok.Builder;
 
 import java.util.UUID;
+
 @Builder
-public record EmailResponse(
+public record EmailDtoEvent(
         UUID userId,
         String emailTo,
         String emailSubject,
         String body
-) {
+){
 }

@@ -1,11 +1,9 @@
 package dev.java10x.email.repository;
 
-import domain.Email;
+import dev.java10x.email.domain.Email;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
-@Repository
 public interface EmailRepository extends JpaRepository<Email, UUID> {
 }
