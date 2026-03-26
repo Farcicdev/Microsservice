@@ -16,7 +16,7 @@ public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID userId;
+    private UUID id;
 
     private String name;
 

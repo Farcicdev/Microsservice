@@ -9,7 +9,7 @@ public class EmailEventMapper {
 
     public EmailDtoEvent toEmailDto(Users users,String subject,String body){
         return EmailDtoEvent.builder()
-                .userId(users.getUserId())
+                .userId(users.getId())
                 .emailTo(users.getEmail())
                 .emailSubject(subject)
                 .body(body)
