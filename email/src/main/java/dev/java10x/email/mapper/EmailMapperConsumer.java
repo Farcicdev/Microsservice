@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmailMapperConsumer {
 
-        public Email toModel2(EmailDtoConsumer consumer){
+        public Email toModel(EmailDtoConsumer consumer){
                 return Email.builder()
                         .userId(consumer.userId())
                         .emailTo(consumer.emailTo())

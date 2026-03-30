@@ -33,8 +33,8 @@ public class UsersService {
 
         EmailDtoEvent emailDto = mapperEvent.toEmailDto(
                 saved,
-                "Hello " + saved.getName() + "teste",
-                "teste"
+                "oii " + saved.getName() + ", seja bem vindo ao nosso sistema",
+                "ta funcionandoo"
         );
 
         producer.criarUsuarioEvent(emailDto);

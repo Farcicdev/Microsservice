@@ -10,7 +10,6 @@ public class EmailMapper {
 
     public Email toModel(EmailRequest request){
         return Email.builder()
-                .userId(request.userId())
                 .emailTo(request.emailTo())
                 .emailSubject(request.emailSubject())
                 .Body(request.body())

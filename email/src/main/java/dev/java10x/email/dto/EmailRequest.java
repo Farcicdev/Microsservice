@@ -1,10 +1,11 @@
 package dev.java10x.email.dto;
 
-import java.util.UUID;
+import lombok.Builder;
 
+@Builder
 public record EmailRequest (
-        UUID userId,
         String emailTo,
+        String emailFrom,
         String emailSubject,
         String body
 ){

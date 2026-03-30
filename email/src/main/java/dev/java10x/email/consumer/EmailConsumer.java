@@ -1,6 +1,6 @@
 package dev.java10x.email.consumer;
 
-import dev.java10x.email.domain.Email;
+import dev.java10x.email.Service.EmailService;
 import dev.java10x.email.dto.EmailDtoConsumer;
 import dev.java10x.email.mapper.EmailMapperConsumer;
 import lombok.RequiredArgsConstructor;
@@ -15,9 +15,15 @@ public class EmailConsumer {
 
     private final EmailMapperConsumer mapper;
 
+    private final EmailService service;
+
     @RabbitListener(queues = "email-queue")
     public void consumeEmail(@Payload EmailDtoConsumer consumer) {
-        Email model = mapper.toModel2(consumer);
-        System.out.println(model.getEmailTo());
+        try{
+        System.out.println("Mensagem recebida da fila: " + consumer);
+        service.sendEmail(mapper.toModel(consumer));
+    }catch (Exception e){
+            System.out.println("Erro ao processar a mensagem: " + e.getMessage());
+        }
     }
 }
