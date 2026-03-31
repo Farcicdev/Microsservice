@@ -15,8 +15,6 @@ import java.util.UUID;
 @Builder
 public class Email {
 
-    private final long srialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID emailId;
