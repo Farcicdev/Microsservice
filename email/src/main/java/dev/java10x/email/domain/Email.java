@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "tb_mail")
+@Table(name = "tb_email")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -28,6 +28,7 @@ public class Email {
     private String emailTo;
 
     private String emailSubject;
+
     @Column(columnDefinition = "TEXT")
     private String Body;
 

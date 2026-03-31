@@ -17,10 +17,10 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "email", unique = true)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
 }
